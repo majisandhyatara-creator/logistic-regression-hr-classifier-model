@@ -12,7 +12,7 @@ By analyzing employee engagement metrics, compensation structures, workplace sat
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 - [Executive Summary](#-executive-summary)
 - [Dataset Overview & Data Dictionary](#-dataset-overview--data-dictionary)
 - [Project Architecture & Repository Structure](#-project-architecture--repository-structure)
@@ -25,13 +25,13 @@ By analyzing employee engagement metrics, compensation structures, workplace sat
 
 ---
 
-## 🎯 Executive Summary
+##  Executive Summary
 
 Employee attrition carries substantial direct and indirect financial costs for organizations—ranging from recruitment expenses to lost productivity and team morale disruption. 
 
 In this repository, we develop a predictive binary classifier on **1,350 employee records** to classify whether an employee will stay (`0`) or leave (`1`). We explore baseline Logistic Regression and benchmark it against **L1 (Lasso)** and **L2 (Ridge)** regularized models to handle collinearity introduced by engineered polynomial interaction features.
 
-### 🌟 Key Highlights
+###  Key Highlights
 - **Best Performing Classifier**: **L1 Regularized (Lasso) Logistic Regression (`C=0.5`, `solver='liblinear'`)**
 - **Overall Accuracy**: **87.04%** (+1.11% gain over unregularized baseline)
 - **Turnover Class Precision**: **88.00%** (minimizing false-positive attrition flags)
@@ -39,7 +39,7 @@ In this repository, we develop a predictive binary classifier on **1,350 employe
 
 ---
 
-## 📊 Dataset Overview & Data Dictionary
+##  Dataset Overview & Data Dictionary
 
 The project utilizes `employee_turnover.csv`, containing **1,350 rows** and **16 columns** (no missing values). Predictors include continuous normalized metrics, employee demographic attributes, compensation indices, and engineered interaction terms.
 
@@ -64,7 +64,7 @@ The project utilizes `employee_turnover.csv`, containing **1,350 rows** and **16
 
 ---
 
-## 🗂 Project Architecture & Repository Structure
+##  Project Architecture & Repository Structure
 
 ```text
 logistic-regression-hr-classifier-model/
@@ -75,7 +75,7 @@ logistic-regression-hr-classifier-model/
 
 ---
 
-## 🔬 Methodology & ML Workflow
+##  Methodology & ML Workflow
 
 1. **Exploratory Data Analysis & Data Validation**:
    - Confirmed dataset integrity (`1,350` records across `16` attributes, zero `NaN` values).
@@ -96,7 +96,7 @@ logistic-regression-hr-classifier-model/
 
 ---
 
-## 📈 Model Evaluation & Performance Comparison
+##  Model Evaluation & Performance Comparison
 
 All models were evaluated on the held-out test set (`n = 270`). Below is the side-by-side performance summary across all classification approaches:
 
@@ -121,7 +121,7 @@ weighted avg       0.87      0.87      0.87       270
 
 ---
 
-## 💡 Key Findings & Regularization Insights
+##  Key Findings & Regularization Insights
 
 1. **Why L1 Regularization Outperformed Unregularized & L2 Models**:
    - The dataset includes engineered features (`Annual_Bonus_Squared` and `Annual_Bonus_Training_Hours_Interaction`) that introduce multicollinearity with their parent variables (`Annual_Bonus` and `Training_Hours`).
@@ -133,7 +133,7 @@ weighted avg       0.87      0.87      0.87       270
 
 ---
 
-## 🚀 Getting Started & Installation
+##  Getting Started & Installation
 
 ### Prerequisites
 - Python **3.9+**
@@ -163,7 +163,7 @@ pip install pandas numpy scikit-learn seaborn matplotlib jupyter
 
 ---
 
-## 💻 Usage & Running the Notebook
+##  Usage & Running the Notebook
 
 To explore the entire data science pipeline, launch Jupyter Notebook from the project directory:
 
@@ -180,7 +180,7 @@ You can execute all cells sequentially (`Cell > Run All`) to:
 
 ---
 
-## 🏢 Business Impact & HR Recommendations
+##  Business Impact & HR Recommendations
 
 - **Target Retention Interventions**: Prioritize proactive 1-on-1 check-ins and tailored career discussions for employees predicted as high-risk by the regularized model.
 - **Holistic Compensation Strategy**: Because non-linear interaction terms (`Annual_Bonus_Squared` and training interaction) affect turnover probability, HR should pair compensation bonuses with meaningful growth opportunities (`Training_Hours`).
@@ -188,6 +188,6 @@ You can execute all cells sequentially (`Cell > Run All`) to:
 
 ---
 
-## 📝 License & Contributing
+##  License & Contributing
 
 Feel free to open issues or submit pull requests if you would like to contribute additional feature engineering, non-linear classifiers (e.g., Random Forests, XGBoost), or interactive dashboard integrations.
